@@ -18,7 +18,7 @@ for (var i = 0; i<bounds.length - 1; i++)
 {
     for (var j = i + 1; j < bounds.length; j++)
     {
-        if (Number(bounds[i].value) < Number(bounds[j].value))
+        if (Number(bounds[i].value) <= Number(bounds[j].value))
         {
             var error = document.getElementById("error");
             error.innerHTML = "Please enter valid bounds";
@@ -79,5 +79,4 @@ for(var i = 0; i<grades.length; i++)
 }
 }
 
-//window.onload = run();
 
