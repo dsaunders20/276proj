@@ -10,6 +10,9 @@ var bounds = document.getElementsByClassName("bounds");
 // put all of the histogram values in array
 var histogram = document.getElementsByClassName("histogram");
 
+var error = document.getElementById("error");
+error.innerHTML = "";
+
 // validate the bounds
 for (var i = 0; i<bounds.length - 1; i++)
 {
@@ -17,8 +20,8 @@ for (var i = 0; i<bounds.length - 1; i++)
     {
         if (Number(bounds[i].value) < Number(bounds[j].value))
         {
-            
-            window.alert("Please enter valid bounds");
+            var error = document.getElementById("error");
+            error.innerHTML = "Please enter valid bounds";
         }
     }
 }
@@ -75,4 +78,6 @@ for(var i = 0; i<grades.length; i++)
     }   
 }
 }
+
+//window.onload = run();
 
