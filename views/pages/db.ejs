@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <% include ../partials/header.ejs %>
+    <meta charset="utf-8">
+    <title>Students</title>
+    <!-- <style type="text/css">
+      div{
+        border: 1px;
+        border-color: black;
+      }
+    </style> -->
+    <!-- <link rel="stylesheet" href="./stylesheets/db.css"> -->
 </head>
 
 <body>
 
-<% include ../partials/nav.ejs %>
-
 <div class="container">
-<h2>Database Results</h2>
+<h2>Students</h2>
 
-<ul>
-    <% results.forEach(function(r) { %>
-        <li><%= r.id %> - <%= r.name %></li>
-    <% }); %>
-</ul>
+  <% results.forEach(function(r) { %>
+      <div class="student" style="border:1px solid black;float: left; height: 100px; width: 70px; text-align: center;">
+        <b style="color: <%= r.haircolor %>"><%= r.name %></b> <br>
+        <%= r.gpa %>
+      </div>
+  <% }); %>
 
 </div>
 
