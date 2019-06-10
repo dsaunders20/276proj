@@ -22,18 +22,44 @@ app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('pages/index'))
 
 app.post('/addStudent', function(req, res){
-    // request body info
-    console.log("hibib");
-    console.log(req.body.name);
-    // validate user
-    // respond
-  })
+    var id = req.body.StudentID;
+    var name = req.body.Name;
+    var weight = req.body.Weight;
+    var height = req.body.Height;
+    var color = req.body.HairColor; 
+    var gpa = req.body.GPA;
+    var sex = req.body.Sex;
+
+    var query = "INSERT INTO student (studentid, name, weight, height, haircolor, gpa, sex) VALUES ($1, $2, $3, $4, $5, $6, $7)";
+
+    pool.query(query, [id, name, weight, height, color, gpa, sex], (error, result) => {
+        if (error) {throw error}
+        //console.log(result);
+    }); 
+    res.redirect('/studenthome.html');
+  });
   
 
 app.get('/students', function(req,res){
     pool.query('select * from student', function(error, result){
+        if (result.rows.length < 1)
+        {
+            res.render('pages/warning');
+        }
+        else{
         var results = { 'results': (result.rows[0].studentid) ? result.rows : [] };
-        res.render('pages/db', results);
+        res.render('pages/db', results);}
+    });       
+});
+app.get('/details', function(req,res){
+    pool.query('select * from student', function(error, result){
+        if (result.rows.length < 1)
+        {
+            res.render('pages/warning');
+        }
+        else{
+        var results = { 'results': (result.rows[0].studentid) ? result.rows : [] };
+        res.render('pages/details', results);}
     });       
 });
 

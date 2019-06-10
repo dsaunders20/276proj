@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Add Student</title>
+      </head>
+      <body style="background-image: url(https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80)">
+        <h1>MENU</h1>
+        <ul>
+            <li><a href="studenthome.html">Home</a></li>
+            <li><a href="addStudent.html">Add a Student</a></li>
+            <li><a href="deleteStudent.html">Delete a Student</a></li>
+            <li><a href="modifyStudent.html">Modify a Student</a></li>
+            <li><a href="students">Display Students</a></li>
+            <li><a href="details">Detailed Student Info</a></li>
+        </ul>
+        <h3>Fill in the following information to delete a student from the application!</h3>
+        <p><b style="color: red;">You must know the Student ID of a student in order to delete them from the system.</b></p>
+        <form class = "addStudent" action="/addStudent" method="POST">
+            <span>StudentID:</span>
+            <input type="number" name="StudentID" value=""><br>
+            <button>ACCEPT</button>
+        </form>
+
+      </body>
+</html>

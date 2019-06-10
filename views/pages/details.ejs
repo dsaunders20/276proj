@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Student Details</title>
+    <style type="text/css">
+        td
+        {
+            padding:0 15px 0 15px;
+        }
+        </style>
+</head>
+
+<body style="background-image: url(https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80)">
+
+  <h1>MENU</h1>
+  <ul>
+        <li><a href="studenthome.html">Home</a></li>
+        <li><a href="addStudent.html">Add a Student</a></li>
+        <li><a href="deleteStudent.html">Delete a Student</a></li>
+        <li><a href="modifyStudent.html">Modify a Student</a></li>
+        <li><a href="students">Display Students</a></li>
+        <li><a href="details">Detailed Student Info</a></li>
+      </ul>
+
+<div class="container">
+<h2>Details of Current Students</h2>
+    <table style="border: 1px solid black">
+        <tr>
+            <th>StudentID</th>
+            <th>Name</th>
+            <th>Weight(lbs)</th>
+            <th>Height(cm)</th>
+            <th>Hair Color</th>
+            <th>GPA</th>
+            <th>Sex</th>
+        </tr>
+        <% results.forEach(function(r) { %>
+        <tr>
+            <td><%=r.studentid%></td>
+            <td><%=r.name%></td>
+            <td><%=r.weight%></td>
+            <td><%=r.height%></td>
+            <td><%=r.haircolor%></td>
+            <td><%=r.gpa%></td>
+            <td><%=r.sex%></td>
+        </tr>
+        <% }); %>
+    </table>
+</div>
+
+</body>
+</html>

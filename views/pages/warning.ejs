@@ -17,17 +17,6 @@
       <li><a href="details">Detailed Student Info</a></li>
     </ul>
 
-<div class="container">
-<h2>Current Students</h2>
-
-  <% results.forEach(function(r) { %>
-      <div class="student" style="border:1px solid black;float: left; margin-left: 30px; height: <%= r.height %>px; width: <%= r.weight %>px; text-align: center;">
-        <b style="color: <%= r.haircolor %>"><%= r.name %></b> <br>
-        <%= r.gpa %>
-      </div>
-  <% }); %>
-
-</div>
-
+  <h3 style="color: red">You must add a student to the system before viewing this page!</h3>
 </body>
 </html>
