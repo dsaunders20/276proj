@@ -1,39 +1,7 @@
-# node-js-getting-started
+A basic web app which allows the user to add, remove and modify students. The user can also view the students currently in the application. The students names, gpa and geneder symbols are displayed inside a rectangle which represents their weight (width) and height.
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
-
-This application supports the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
-
-## Running Locally
-
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
-
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+The MENU section provides links for different features:
+'Add a Student' allows the user to add a student by filling out all fields and assumes the student ID will be unique.
+'Delete a student' allows the user to delete a student using their unique studentID.
+'Display and Modify Students' displays the students as described above and also provides the user the ability to edit any student. Editing students is done by clicking the edit button associated with the student and any attribute can be edited with the exception of the StudentID.
+'Detailed student info' displays a table with all students and all their corresponding information. 
