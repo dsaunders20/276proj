@@ -36,7 +36,52 @@ app.post('/addStudent', function(req, res){
         if (error) {throw error}
         //console.log(result);
     }); 
-    res.redirect('/studenthome.html');
+    res.redirect('/students');
+  });
+
+  app.post('/deleteStudent', function(req, res){
+    var id = req.body.StudentID;
+
+    var query = "DELETE FROM student WHERE studentid = ($1)";
+
+    pool.query(query, [id], (error, result) => {
+        if (error) 
+        {throw error}
+
+    }); 
+    res.redirect('/students');
+  });
+
+  app.get('/editstudent/:id', function(req, res){
+      var id = req.params.id;
+      var query = "select * from student WHERE studentid = ($1)";
+
+      pool.query(query, [id], (error, result) => {
+        if (error) 
+        {throw error}
+
+        var results = { 'results': (result.rows[0].studentid) ? result.rows : [] };
+        res.render('pages/editstudent', results);
+    }); 
+  });
+
+  app.post('/editstudent', function(req, res){
+    var id = req.body.StudentID;
+    var name = req.body.Name;
+    var weight = req.body.Weight;
+    var height = req.body.Height;
+    var color = req.body.HairColor; 
+    var gpa = req.body.GPA;
+    var sex = req.body.Sex;
+
+    var query = "UPDATE student SET name = ($1), weight = ($2), height = ($3), haircolor = ($4), gpa = ($5), sex = ($6) WHERE studentid = ($7)";
+
+    pool.query(query, [name, weight, height, color, gpa, sex, id], (error, result) => {
+        if (error) 
+        {throw error}
+
+    }); 
+    res.redirect('/students');
   });
   
 

@@ -3,22 +3,36 @@
     <head>
         <meta charset="utf-8">
         <title>Add Student</title>
+        <style>
+                span{font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif}
+                input{
+                    font-size: 100%
+                }
+                option{
+                    font-size: 100%
+                }
+                select{
+                    font-size: 100%
+                }
+                button{
+                    color: blue;
+                }
+            </style>
       </head>
       <body style="background-image: url(https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80)">
         <h1>MENU</h1>
         <ul>
-            <li><a href="studenthome.html">Home</a></li>
-            <li><a href="addStudent.html">Add a Student</a></li>
-            <li><a href="deleteStudent.html">Delete a Student</a></li>
-            <li><a href="modifyStudent.html">Modify a Student</a></li>
-            <li><a href="students">Display Students</a></li>
-            <li><a href="details">Detailed Student Info</a></li>
-        </ul>
+                <li><a href="studenthome.html">Home</a></li>
+                <li><a href="addStudent.html">Add a Student</a></li>
+                <li><a href="deleteStudent.html">Delete a Student</a></li>
+                <li><a href="students">Display & Modify Students</a></li>
+                <li><a href="details">Detailed Student Info</a></li>
+              </ul>
         <h3>Fill in the following information to delete a student from the application!</h3>
         <p><b style="color: red;">You must know the Student ID of a student in order to delete them from the system.</b></p>
-        <form class = "addStudent" action="/addStudent" method="POST">
+        <form class = "deleteStudent" action="/deleteStudent" method="POST">
             <span>StudentID:</span>
-            <input type="number" name="StudentID" value=""><br>
+            <input type="number" name="StudentID" value=""><br><br>
             <button>ACCEPT</button>
         </form>
 

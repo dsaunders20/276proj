@@ -20,39 +20,42 @@
         </style>
       </head>
       <body style="background-image: url(https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80)">
-          <h1>MENU</h1>
+        <% var r = results[0] %>  
+        <!-- <h1>MENU</h1>
           <ul>
               <li><a href="studenthome.html">Home</a></li>
               <li><a href="addStudent.html">Add a Student</a></li>
               <li><a href="deleteStudent.html">Delete a Student</a></li>
-              <li><a href="students">Display & Modify Students</a></li>
+              <li><a href="modifyStudent.html">Modify a Student</a></li>
+              <li><a href="students">Display Students</a></li>
               <li><a href="details">Detailed Student Info</a></li>
-            </ul>
+            </ul> -->
   
-        <h3>Fill in the following information to add student to application!</h3>
-        <p style="color: red">StudentID's must be unique.</p>
-        <form class = "addStudent" action="/addStudent" method="POST">
+        <h3>Update this student's information.</h3>
+        <form class = "editStudent" action="/editStudent" method="POST">
             <span>StudentID:</span>
-            <input type="number" name="StudentID" value=""><br>
+            <input type="number" name="StudentID" value="<%= r.studentid %>" readonly><br>
             <span>Name:</span>
-            <input type="text" name="Name" value=""><br>
+            <input type="text" name="Name" value="<%= r.name %>" required><br>
             <span>Weight(lbs):</span>
-            <input type="number" min="0" max="1000" name="Weight" value=""><br>
+            <input type="number" min="0" max="1000" name="Weight" value="<%= r.weight %>" required><br>
             <span>Height(cm):</span>
-            <input type="number" min="0" max="500" name="Height" value=""><br>
+            <input type="number" min="0" max="500" name="Height" value="<%= r.height %>" required><br>
             <!-- <span>Hair Color:</span>
             <input type="text" name="HairColor" value=""><br> -->
             <span>Hair Color:</span>
             <select name = "HairColor">
+                <option selected="selected"><%= r.haircolor %></option> 
                 <option value="Brown">Brown</option>
                 <option value="Black">Black</option>
                 <option value="Red">Red</option>
                 <option value="Yellow">Yellow</option>
             </select> <br>
             <span>GPA:</span>
-            <input type="number" min="0" max="4.3" step="any" name="GPA" value=""><br>
+            <input type="number" min="0" max="4.3" step="any" name="GPA" value="<%= r.gpa %>" required><br>
             <span>Sex:</span>
             <select name = "Sex">
+                <option selected="selected"><%= r.sex %></option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select> <br><br>

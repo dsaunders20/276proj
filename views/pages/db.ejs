@@ -12,8 +12,7 @@
       <li><a href="studenthome.html">Home</a></li>
       <li><a href="addStudent.html">Add a Student</a></li>
       <li><a href="deleteStudent.html">Delete a Student</a></li>
-      <li><a href="modifyStudent.html">Modify a Student</a></li>
-      <li><a href="students">Display Students</a></li>
+      <li><a href="students">Display & Modify Students</a></li>
       <li><a href="details">Detailed Student Info</a></li>
     </ul>
 
@@ -21,13 +20,22 @@
 <h2>Current Students</h2>
 
   <% results.forEach(function(r) { %>
-      <div class="student" style="border:1px solid black;float: left; margin-left: 30px; height: <%= r.height %>px; width: <%= r.weight %>px; text-align: center;">
-        <b style="color: <%= r.haircolor %>"><%= r.name %></b> <br>
-        <%= r.gpa %>
+    <form id = "editstudent" action="/editstudent/<%=r.studentid%>" method="GET">
+      <div class="student" style="border:1px solid black; float: left; margin-left: 30px; height: <%= r.height %>px; width: <%= r.weight %>px; text-align: center;">
+        <b style="color: <%= r.haircolor %>"><%= r.name %></b> <br><br>
+        <%= r.gpa %><br><br>
+        <% if (r.sex == "Male") { %>
+        <img src="https://cdn.pixabay.com/photo/2012/04/23/17/06/male-39108_960_720.png" height="25%" width="25%">  
+        <% }; %>
+        <% if (r.sex == "Female") { %>
+          <img src="https://cdn1.iconfinder.com/data/icons/medicine-pt-6/100/087_-_woman_gender_sex_female_gender_symbol-512.png" height="35%" width="35%">
+          <% }; %>
+          <br><br>
+        <input type="submit" value="EDIT">
       </div>
+    </form>
   <% }); %>
 
 </div>
-
 </body>
 </html>
